@@ -37,13 +37,13 @@
     src: docker-compose.yml.j2
     dest: /home/mastodon/live/docker-compose.yml
 
-#- name: change owner of public
-#  file:
-#    path: "/home/mastodon/live/public"
-#    state: directory
-#    owner: "991"
-#    group: "991"
-#    recurse: true
+- name: change owner of mastodon app
+  file:
+    path: "/home/mastodon/live"
+    state: directory
+    owner: "mastodon"
+    group: "mastodon"
+    recurse: true
 
 - name: setting env secrets
   template:
